@@ -1,6 +1,8 @@
 var http = require("http");
-var date = require("./dateTime")
+var date = require("./dateTime");
 var url = require("url");
+// var fs = require("fs");
+// var fsp = require("./fileServer");
 
 http.createServer(function (req, res) {
   res.writeHead(200, {"Content-type":"text/html"});
@@ -17,5 +19,7 @@ http.createServer(function (req, res) {
   } else {
     res.write("<br>" + text);
   }
+
+  res.write("<br><a href='fileServer.js'>fileServer.js</a>")
   res.end("<br> Hello world!");
 }).listen(8080);
